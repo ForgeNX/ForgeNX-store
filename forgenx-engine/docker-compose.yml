@@ -1,0 +1,56 @@
+version: "3.7"
+
+  services:
+
+  app_proxy:
+    environment:
+      APP_HOST: engine
+              APP_PORT: 8080
+                      JWT_SECRET: "${JWT_SECRET}"
+                            networks:
+      - forgenx_main_network
+
+          init-permissions:
+    image: alpine:3.19
+          command: >
+                  sh -c "mkdir -p /data/pool/logs &&
+                         mkdir -p /shared/forgenx/coins &&
+                         chown -R 1000:1000 /data /shared"
+                               volumes:
+      - ${APP_DATA_DIR}/data:/data
+              - ${APP_DATA_DIR}/data/shared:/shared
+            restart: "no"
+
+                engine:
+    image: ghcr.io/forgenx/forgenx-engine:2.0.7
+          restart: unless-stopped
+
+                depends_on:
+      init-permissions:
+        condition: service_completed_successfully
+
+              ports:
+      - "3333:3333"
+              - "3335:3335"
+              - "8080:8080"
+
+            volumes:
+      - ${APP_DATA_DIR}/data/pool/logs:/pool/logs
+              - /var/lib/forgenx/shared/forgenx/coins:/pool/coins
+                      - /opt/forgenx/apps:/opt/forgenx/apps
+
+                            environment:
+      - APP_DATA_DIR=${APP_DATA_DIR}
+
+    networks:
+      - forgenx_main_network
+              - gofractal_network
+
+        networks:
+  forgenx_main_network:
+    external: true
+          name: forgenx_main_network
+
+              gofractal_network:
+    external: true
+          name: forgenx-gofractal_default
