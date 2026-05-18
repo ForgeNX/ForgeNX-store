@@ -1,4 +1,4 @@
-# ForgeNX App Store
+# ForgeNX Store
 
 Application store and app definitions for ForgeNX, including install manifests, containers and service integrations.
 
