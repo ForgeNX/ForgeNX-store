@@ -24,7 +24,7 @@ Application store and app definitions for ForgeNX, including install manifests, 
 - Health monitoring
 
 ## Goals
-ForgeNX App Store aims to provide a simple, reproducible framework for deploying and managing applications on ForgeNX systems.
+ForgeNX Store aims to provide a simple, reproducible framework for deploying and managing applications on ForgeNX systems.
 
 ## Future Structure
 ```text
