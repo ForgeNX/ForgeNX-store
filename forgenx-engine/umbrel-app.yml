@@ -9,19 +9,19 @@ description: >-
   ForgeNX Engine provides a lightweight Stratum mining server
     capable of running multi-coin solo mining pools.
 
-    developer: ForgeNX
-    website: https://github.com/ForgeNX/forgenx-engine
-    repo: https://github.com/ForgeNX/forgenx-engine
-    support: https://github.com/ForgeNX/forgenx-engine
+developer: ForgeNX
+website: https://github.com/ForgeNX/forgenx-engine
+repo: https://github.com/ForgeNX/forgenx-engine
+support: https://github.com/ForgeNX/forgenx-engine
 
-    dependencies: []
-    port: 8080
+dependencies: []
+port: 8080
 
-    icon: icon.png
-    gallery: []
+icon: icon.png
+gallery: []
 
-    path: ""
-    defaultUsername: ""
-    defaultPassword: ""
+path: ""
+defaultUsername: ""
+defaultPassword: ""
 
-    submitter: ForgeNX
+submitter: ForgeNX
