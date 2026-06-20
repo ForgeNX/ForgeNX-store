@@ -17,7 +17,7 @@ description: >-
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
 
   Miner connection (via ForgeNX Engine):
-    - URL: stratum+tcp://<your-ip>:3334
+    - URL: stratum+tcp://<your-server-ip>:3334
     - Username: your BCH payout address (or address.workername)
     - Password: anything
 
