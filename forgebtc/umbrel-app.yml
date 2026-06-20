@@ -6,14 +6,51 @@ version: "0.1.0"
 tagline: Bitcoin full node + solo mining pool
 description: >-
   ForgeBTC runs a Bitcoin full node and connects it to the ForgeNX Engine
-  as a solo mining pool. Coming soon.
+  as a solo mining pool. Supports both Bitcoin Knots (default, recommended)
+  and Bitcoin Core.
+
+  Features:
+    - Bitcoin Knots v29.3 (default) or Bitcoin Core v31.0 — your choice at install
+    - Bitcoin Knots recommended: enhanced spam filtering and policy controls
+    - Connects automatically to ForgeNX Engine via Stratum
+    - Real-time node stats in the ForgeNX dashboard
+    - Pruned mode support (saves disk space)
+    - ZMQ block/transaction publishing for pool engine
+    - Adjustable difficulty presets (Home, Small Farm, Large Farm)
+
+  Miner connection (via ForgeNX Engine):
+    - URL: stratum+tcp://<your-ip>:3335
+    - Username: your BTC payout address (or address.workername)
+    - Password: anything
+
+  Notes:
+    - Bitcoin requires significant disk space even in pruned mode (min 550 MB)
+    - Full (non-pruned) sync requires 700 GB+
+    - First sync can take 12–48 hours depending on hardware
+    - SSD strongly recommended
+    - ForgeNX Engine must be installed and running before installing ForgeBTC
+    - Solo mining Bitcoin is extremely unlikely without significant hashrate (EH/s range)
+
+  Components:
+    - Bitcoin Knots v29.3 — https://github.com/bitcoinknots/bitcoin/releases (default)
+    - Bitcoin Core v31.0 — https://github.com/bitcoin/bitcoin/releases (optional)
+    - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
+
+  Ports:
+    - P2P: 8335
+    - RPC: 9003 (internal)
+    - ZMQ: 28334 (internal)
+    - Stratum: 3335 (via ForgeNX Engine)
+
+  Status:
+    - v0.1.0: Coming soon. Node software integration in progress.
 developer: ForgeNX
 website: https://github.com/ForgeNX
 repo: https://github.com/ForgeNX
 support: https://github.com/ForgeNX
 dependencies:
   - forgenx-engine
-port: 8332
+port: 9003
 icon: icon.png
 gallery: []
 path: ""

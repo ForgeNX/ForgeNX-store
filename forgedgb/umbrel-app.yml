@@ -3,17 +3,51 @@ id: forgedgb
 category: bitcoin
 name: ForgeDGB
 version: "0.1.0"
-tagline: Digibyte full node + solo mining pool
+tagline: DigiByte full node + solo mining pool
 description: >-
-  ForgeDGB runs a Digibyte full node and connects it to the ForgeNX Engine
-  as a solo mining pool. Coming soon.
+  ForgeDGB runs a DigiByte full node (DigiByteCore v8.26.2) and connects
+  it to the ForgeNX Engine as a solo mining pool.
+
+  Features:
+    - DigiByteCore v8.26.2 full node with automatic sync
+    - Connects automatically to ForgeNX Engine via Stratum
+    - Real-time node stats in the ForgeNX dashboard
+    - Pruned mode support (saves disk space)
+    - ZMQ block/transaction publishing for pool engine
+    - Adjustable difficulty presets (Home, Small Farm, Large Farm)
+    - Multi-algorithm support: SHA-256d, Scrypt, Skein, Qubit, Odocrypt
+
+  Miner connection (via ForgeNX Engine):
+    - URL: stratum+tcp://<your-ip>:3333
+    - Username: your DGB payout address (or address.workername)
+    - Password: anything
+
+  Notes:
+    - DigiByte uses 5 mining algorithms with DigiShield difficulty adjustment
+    - DigiByte has 15-second target block times — one of the fastest UTXO chains
+    - Full chain is large; SSD strongly recommended
+    - First sync can take several hours depending on hardware
+    - ForgeNX Engine must be installed and running before installing ForgeDGB
+
+  Components:
+    - DigiByteCore v8.26.2 — https://github.com/DigiByte-Core/digibyte/releases
+    - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
+
+  Ports:
+    - P2P: 12024
+    - RPC: 9001 (internal)
+    - ZMQ: 28332 (internal)
+    - Stratum: 3333 (via ForgeNX Engine)
+
+  Status:
+    - v0.1.0: Coming soon. Node software integration in progress.
 developer: ForgeNX
 website: https://github.com/ForgeNX
 repo: https://github.com/ForgeNX
 support: https://github.com/ForgeNX
 dependencies:
   - forgenx-engine
-port: 8332
+port: 9001
 icon: icon.png
 gallery: []
 path: ""

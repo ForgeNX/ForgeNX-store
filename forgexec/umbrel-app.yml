@@ -5,15 +5,49 @@ name: ForgeXEC
 version: "0.1.0"
 tagline: eCash full node + solo mining pool
 description: >-
-  ForgeXEC runs an eCash full node and connects it to the ForgeNX Engine
-  as a solo mining pool. Coming soon.
+  ForgeXEC runs an eCash (XEC) full node using Bitcoin ABC v0.33.5 and
+  connects it to the ForgeNX Engine as a solo mining pool.
+
+  Features:
+    - Bitcoin ABC v0.33.5 full node with automatic sync
+    - Connects automatically to ForgeNX Engine via Stratum
+    - Real-time node stats in the ForgeNX dashboard
+    - Pruned mode support (saves disk space)
+    - ZMQ block/transaction publishing for pool engine
+    - Adjustable difficulty presets (Home, Small Farm, Large Farm)
+
+  Miner connection (via ForgeNX Engine):
+    - URL: stratum+tcp://<your-ip>:3336
+    - Username: your XEC payout address (or address.workername)
+    - Password: anything
+
+  Notes:
+    - eCash (XEC) is the continuation of the Bitcoin ABC chain
+    - eCash uses 2-minute target block times (vs 10 minutes for BTC/BCH)
+    - Use ecash: prefix addresses for widest compatibility
+    - First sync can take several hours depending on hardware
+    - SSD strongly recommended
+    - ForgeNX Engine must be installed and running before installing ForgeXEC
+
+  Components:
+    - Bitcoin ABC v0.33.5 — https://www.bitcoinabc.org/releases/
+    - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
+
+  Ports:
+    - P2P: 8337
+    - RPC: 9004 (internal)
+    - ZMQ: 28335 (internal)
+    - Stratum: 3336 (via ForgeNX Engine)
+
+  Status:
+    - v0.1.0: Coming soon. Node software integration in progress.
 developer: ForgeNX
 website: https://github.com/ForgeNX
 repo: https://github.com/ForgeNX
 support: https://github.com/ForgeNX
 dependencies:
   - forgenx-engine
-port: 8332
+port: 9004
 icon: icon.png
 gallery: []
 path: ""
