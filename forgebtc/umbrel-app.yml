@@ -1,0 +1,23 @@
+manifestVersion: 1
+id: forgebtc
+category: bitcoin
+name: ForgeBTC
+version: "0.1.0"
+tagline: Bitcoin full node + solo mining pool
+description: >-
+  ForgeBTC runs a Bitcoin full node and connects it to the ForgeNX Engine
+  as a solo mining pool. Coming soon.
+developer: ForgeNX
+website: https://github.com/ForgeNX
+repo: https://github.com/ForgeNX
+support: https://github.com/ForgeNX
+dependencies:
+  - forgenx-engine
+port: 8332
+icon: icon.png
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: ForgeNX
+node_symbol: BTC

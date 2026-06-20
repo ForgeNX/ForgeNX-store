@@ -1,0 +1,29 @@
+manifestVersion: 1
+id: forgebch
+category: bitcoin
+name: ForgeBCH
+version: "1.0.1"
+tagline: Bitcoin Cash full node + solo mining pool
+description: >-
+  ForgeBCH runs a Bitcoin Cash full node (BCHN v29.0.0) and connects it
+  to the ForgeNX Engine as a solo mining pool.
+  Features:
+    - BCHN v29.0.0 full node with automatic sync
+    - Connects automatically to ForgeNX Engine via Stratum
+    - Real-time node stats in the ForgeNX dashboard
+    - Pruned mode support (saves disk space)
+    - ZMQ block/transaction publishing for pool engine
+developer: ForgeNX
+website: https://github.com/ForgeNX/forgebch
+repo: https://github.com/ForgeNX/forgebch
+support: https://github.com/ForgeNX/forgebch/issues
+dependencies:
+  - forgenx-engine
+port: 9002
+icon: icon.png
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: ForgeNX
+node_symbol: BCH
