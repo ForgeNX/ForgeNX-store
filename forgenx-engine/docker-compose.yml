@@ -22,7 +22,7 @@ services:
     restart: "no"
 
   engine:
-    image: ghcr.io/forgenx/forgenx-engine:1.0.8
+    image: ghcr.io/forgenx/forgenx-engine:1.0.9
     restart: unless-stopped
 
     depends_on:
@@ -36,6 +36,14 @@ services:
       - "3336:3336"
       - "3337:3337"
       - "3338:3338"
+      - "4333:4333"
+      - "4334:4334"
+      - "4335:4335"
+      - "4336:4336"
+      - "4337:4337"
+      - "4338:4338"
+      - "4339:4339"
+      - "4340:4340"
       - "8080:8080"
 
     volumes:
