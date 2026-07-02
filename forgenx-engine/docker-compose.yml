@@ -1,0 +1,68 @@
+version: "3.7"
+
+services:
+
+  app_proxy:
+    environment:
+      APP_HOST: engine
+      APP_PORT: 8080
+      JWT_SECRET: "${JWT_SECRET}"
+    networks:
+      - umbrel_main_network
+
+  init-permissions:
+    image: alpine:3.19
+    command: >
+      sh -c "mkdir -p /data/pool/logs &&
+             mkdir -p /shared/forgenx/coins &&
+             chown -R 1000:1000 /data /shared"
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      - ${APP_DATA_DIR}/data/shared:/shared
+    restart: "no"
+
+  engine:
+    image: ghcr.io/forgenx/forgenx-engine:1.0.29
+    restart: unless-stopped
+
+    depends_on:
+      init-permissions:
+        condition: service_completed_successfully
+
+    ports:
+      - "3333:3333"
+      - "3334:3334"
+      - "3335:3335"
+      - "3336:3336"
+      - "3337:3337"
+      - "3338:3338"
+      - "4333:4333"
+      - "4334:4334"
+      - "4335:4335"
+      - "4336:4336"
+      - "4337:4337"
+      - "4338:4338"
+      - "4339:4339"
+      - "4340:4340"
+      - "8080:8080"
+
+    volumes:
+      - ${APP_DATA_DIR}/data/pool/logs:/pool/logs
+      - /var/lib/forgenx/shared/forgenx/coins:/pool/coins
+      - /opt/forgenx/apps:/opt/forgenx/apps
+
+    environment:
+      - APP_DATA_DIR=${APP_DATA_DIR}
+
+    networks:
+      - umbrel_main_network
+      - forgenx_network
+
+networks:
+  umbrel_main_network:
+    external: true
+    name: umbrel_main_network
+
+  forgenx_network:
+    external: true
+    name: forgenx_network
