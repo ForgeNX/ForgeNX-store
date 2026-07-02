@@ -39,7 +39,7 @@ services:
       - ${APP_DATA_DIR}/data:/data
 
   node:
-    image: ghcr.io/forgenx/forgebch:1.0.0
+    image: ghcr.io/forgenx/forgebch:1.0.1
     container_name: forgebch-node
     restart: unless-stopped
     depends_on:
