@@ -22,7 +22,7 @@ services:
     restart: "no"
 
   engine:
-    image: ghcr.io/forgenx/forgenx-engine:1.0.67
+    image: ghcr.io/forgenx/forgenx-engine:1.0.68
     restart: unless-stopped
 
     depends_on:
@@ -51,6 +51,7 @@ services:
       - ${APP_DATA_DIR}/data/pool/db:/pool/db
       - /var/lib/forgenx/shared/forgenx/coins:/pool/coins
       - /opt/forgenx/apps:/opt/forgenx/apps
+      - /var/run/docker.sock:/var/run/docker.sock:ro
 
     environment:
       - APP_DATA_DIR=${APP_DATA_DIR}
