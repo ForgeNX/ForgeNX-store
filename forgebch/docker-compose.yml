@@ -14,8 +14,8 @@ services:
     image: getumbrel/app-proxy:1.7.0
     restart: on-failure
     environment:
-      APP_HOST: forgebch-node
-      APP_PORT: 9002
+      APP_HOST: forgebch-ui
+      APP_PORT: 80
       DEVICE_DOMAIN_NAME: forgenx.local
       JWT_SECRET: ${JWT_SECRET}
       MANAGER_IP: ${HOST_IP}
@@ -37,6 +37,17 @@ services:
       "
     volumes:
       - ${APP_DATA_DIR}/data:/data
+
+  ui:
+    image: nginx:alpine
+    container_name: forgebch-ui
+    restart: unless-stopped
+    volumes:
+      - ${APP_DATA_DIR}/ui/dist:/usr/share/nginx/html:ro
+      - ${APP_DATA_DIR}/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - umbrel_main_network
+      - forgenx_network
 
   node:
     image: ghcr.io/forgenx/forgebch:1.0.8
