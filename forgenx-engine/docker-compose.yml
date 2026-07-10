@@ -10,8 +10,25 @@ services:
     networks:
       - umbrel_main_network
 
+  create-network:
+    image: alpine:3.19
+    command: >
+      sh -c "apk add --no-cache curl -q &&
+             curl -sf --unix-socket /var/run/docker.sock
+             http://localhost/networks/forgenx_network > /dev/null 2>&1 ||
+             curl -sf --unix-socket /var/run/docker.sock
+             -X POST -H 'Content-Type: application/json'
+             -d '{"Name":"forgenx_network","Driver":"bridge","Labels":{"com.docker.compose.network":"forgenx_network"}}'
+             http://localhost/networks/create"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: "no"
+
   init-permissions:
     image: alpine:3.19
+    depends_on:
+      create-network:
+        condition: service_completed_successfully
     command: >
       sh -c "mkdir -p /data/pool/logs /data/pool/db &&
              mkdir -p /shared/forgenx/coins &&
@@ -22,7 +39,7 @@ services:
     restart: "no"
 
   engine:
-    image: ghcr.io/forgenx/forgenx-engine:1.0.81
+    image: ghcr.io/forgenx/forgenx-engine:1.0.82
     restart: unless-stopped
 
     depends_on:
