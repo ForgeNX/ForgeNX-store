@@ -22,7 +22,7 @@ services:
     restart: "no"
 
   engine:
-    image: ghcr.io/forgenx/forgenx-engine:1.0.80
+    image: ghcr.io/forgenx/forgenx-engine:1.0.81
     restart: unless-stopped
 
     depends_on:
@@ -66,5 +66,5 @@ networks:
     name: umbrel_main_network
 
   forgenx_network:
+    external: true
     name: forgenx_network
-    driver: bridge
