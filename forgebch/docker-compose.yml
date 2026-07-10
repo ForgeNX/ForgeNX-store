@@ -33,10 +33,12 @@ services:
       sh -c "
         mkdir -p /data/node &&
         mkdir -p /data/logs &&
+        mkdir -p /host-coins &&
         chown -R 1000:1000 /data
       "
     volumes:
       - ${APP_DATA_DIR}/data:/data
+      - /var/lib/forgenx/shared/forgenx/coins:/host-coins
 
   ui:
     image: ghcr.io/forgenx/forgebch-ui:1.0.10
