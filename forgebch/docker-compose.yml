@@ -84,4 +84,6 @@ services:
       - ${APP_DATA_DIR}/data/logs:/data/logs
     networks:
       - umbrel_main_network
-      - forgenx_network
+      forgenx_network:
+        aliases:
+          - forgebch-node
