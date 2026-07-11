@@ -83,7 +83,7 @@ services:
       - /var/lib/forgenx/shared/forgenx/coins:/pool/coins
       - ${APP_DATA_DIR}/data/logs:/data/logs
     networks:
-      - umbrel_main_network
+      umbrel_main_network:
       forgenx_network:
         aliases:
           - forgebch-node
