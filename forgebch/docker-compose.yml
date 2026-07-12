@@ -57,6 +57,7 @@ services:
         condition: service_completed_successfully
     environment:
       - BCH_RPC_USER=${BCH_RPC_USER:-forgebch}
+      - BCH_RPC_PORT=${BCH_RPC_PORT:-9002}
       - BCH_RPC_PASS=${BCH_RPC_PASS}
       - BCH_PRUNE=${BCH_PRUNE:-0}
       - BCH_NETWORK=${BCH_NETWORK:-mainnet}
