@@ -58,7 +58,7 @@ services:
     environment:
       - BCH_RPC_USER=${BCH_RPC_USER:-forgenx}
       - BCH_RPC_PASS=${BCH_RPC_PASS}
-      - BCH_PRUNE=${BCH_PRUNE:-550}
+      - BCH_PRUNE=${BCH_PRUNE:-0}
       - BCH_NETWORK=${BCH_NETWORK:-mainnet}
       - BCH_AUTO_START=${BCH_AUTO_START:-true}
       - BCH_PAYOUT_ADDRESS=${BCH_PAYOUT_ADDRESS:-}
