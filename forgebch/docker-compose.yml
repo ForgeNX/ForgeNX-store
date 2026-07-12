@@ -56,20 +56,20 @@ services:
       init-permissions:
         condition: service_completed_successfully
     environment:
-      - BCH_RPC_USER=${BCH_RPC_USER}
+      - BCH_RPC_USER=${BCH_RPC_USER:-forgebch}
       - BCH_RPC_PASS=${BCH_RPC_PASS}
-      - BCH_PRUNE=${BCH_PRUNE}
-      - BCH_NETWORK=${BCH_NETWORK}
-      - BCH_AUTO_START=${BCH_AUTO_START}
+      - BCH_PRUNE=${BCH_PRUNE:-0}
+      - BCH_NETWORK=${BCH_NETWORK:-mainnet}
+      - BCH_AUTO_START=${BCH_AUTO_START:-true}
       - BCH_PAYOUT_ADDRESS=${BCH_PAYOUT_ADDRESS:-}
       - BCH_WORKER_NAME=${BCH_WORKER_NAME:-}
-      - BCH_DIFF_PRESET=${BCH_DIFF_PRESET}
-      - BCH_START_DIFF=${BCH_START_DIFF}
-      - BCH_MIN_DIFF=${BCH_MIN_DIFF}
-      - BCH_MAX_DIFF=${BCH_MAX_DIFF}
-      - BCH_DONATION1_PCT=${BCH_DONATION1_PCT}
+      - BCH_DIFF_PRESET=${BCH_DIFF_PRESET:-home}
+      - BCH_START_DIFF=${BCH_START_DIFF:-128}
+      - BCH_MIN_DIFF=${BCH_MIN_DIFF:-32}
+      - BCH_MAX_DIFF=${BCH_MAX_DIFF:-4096}
+      - BCH_DONATION1_PCT=${BCH_DONATION1_PCT:-1.0}
       - BCH_DONATION2_ADDR=${BCH_DONATION2_ADDR:-}
-      - BCH_DONATION2_PCT=${BCH_DONATION2_PCT}
+      - BCH_DONATION2_PCT=${BCH_DONATION2_PCT:-0}
       - COIN_ID=bch
       - STRATUM_PORT=3334
       - P2P_PORT=8333
