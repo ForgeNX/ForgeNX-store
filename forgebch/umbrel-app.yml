@@ -19,9 +19,11 @@ description: >-
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
 
   Miner connection (via ForgeNX Engine):
-    - URL: stratum+tcp://<your-server-ip>:3334
-    - Username: your BCH payout address (or address.workername)
+    - Stratum V1 URL: stratum+tcp://<your-server-ip>:3334
+    - Stratum V2 URL: stratum+tcp://<your-server-ip>:4334
+    - Username: your payout address (or address.workername)
     - Password: anything
+    - Stratum V2: add the authority public key from the Overview tab to your miner's pool settings
 
   Notes:
     - Use a legacy BCH address (starts with 1... or 3...) for widest miner compatibility

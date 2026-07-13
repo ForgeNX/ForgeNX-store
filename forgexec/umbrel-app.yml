@@ -19,9 +19,11 @@ description: >-
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
 
   Miner connection (via ForgeNX Engine):
-    - URL: stratum+tcp://<your-server-ip>:3336
-    - Username: your XEC payout address (or address.workername)
+    - Stratum V1 URL: stratum+tcp://<your-server-ip>:3336
+    - Stratum V2 URL: stratum+tcp://<your-server-ip>:4336
+    - Username: your payout address (or address.workername)
     - Password: anything
+    - Stratum V2: add the authority public key from the Overview tab to your miner's pool settings
 
   Notes:
     - eCash (XEC) is the continuation of the Bitcoin ABC chain

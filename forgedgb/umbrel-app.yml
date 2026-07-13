@@ -20,9 +20,11 @@ description: >-
     - Multi-algorithm support: SHA-256d, Scrypt, Skein, Qubit, Odocrypt
 
   Miner connection (via ForgeNX Engine):
-    - URL: stratum+tcp://<your-server-ip>:3333
-    - Username: your DGB payout address (or address.workername)
+    - Stratum V1 URL: stratum+tcp://<your-server-ip>:3333
+    - Stratum V2 URL: stratum+tcp://<your-server-ip>:4333
+    - Username: your payout address (or address.workername)
     - Password: anything
+    - Stratum V2: add the authority public key from the Overview tab to your miner's pool settings
 
   Notes:
     - DigiByte uses 5 mining algorithms with DigiShield difficulty adjustment
