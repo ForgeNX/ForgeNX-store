@@ -10,7 +10,9 @@ description: >-
 
   Features:
     - BCHN v29.0.0 full node with automatic sync
-    - Connects automatically to ForgeNX Engine via Stratum
+    - Connects automatically to ForgeNX Engine via Stratum V1 & V2
+    - Stratum V1 (standard TCP)
+    - Stratum V2 with standard and extended channels (Noise Protocol, ChaCha20-Poly1305 encryption)
     - Real-time node stats in the ForgeNX dashboard
     - Pruned mode support (saves disk space, min 550 MB)
     - ZMQ block/transaction publishing for pool engine
@@ -36,7 +38,8 @@ description: >-
     - P2P: 8333
     - RPC: 9002 (internal)
     - ZMQ: 28333 (internal)
-    - Stratum: 3334 (via ForgeNX Engine)
+    - Stratum V1: 3334 (via ForgeNX Engine)
+    - Stratum V2: 4334 (via ForgeNX Engine)
 
   Status:
     - v1.0.1: Production ready. Stable full node + solo pool operation confirmed.

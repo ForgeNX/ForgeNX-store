@@ -10,7 +10,9 @@ description: >-
 
   Features:
     - DigiByteCore v8.26.2 full node with automatic sync
-    - Connects automatically to ForgeNX Engine via Stratum
+    - Connects automatically to ForgeNX Engine via Stratum V1 & V2
+    - Stratum V1 (standard TCP)
+    - Stratum V2 with standard and extended channels (Noise Protocol, ChaCha20-Poly1305 encryption)
     - Real-time node stats in the ForgeNX dashboard
     - Pruned mode support (saves disk space)
     - ZMQ block/transaction publishing for pool engine
@@ -37,7 +39,8 @@ description: >-
     - P2P: 12024
     - RPC: 9001 (internal)
     - ZMQ: 28332 (internal)
-    - Stratum: 3333 (via ForgeNX Engine)
+    - Stratum V1: 3333 (via ForgeNX Engine)
+    - Stratum V2: 4333 (via ForgeNX Engine)
 
   Status:
     - v0.1.0: Coming soon. Node software integration in progress.
