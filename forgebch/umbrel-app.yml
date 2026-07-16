@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgebch
 category: bitcoin
 name: ForgeBCH
-version: "1.0.50"
+version: "1.0.51"
 tagline: Bitcoin Cash full node + solo mining pool
 description: >-
   ForgeBCH runs a Bitcoin Cash full node (BCHN v29.0.0) and connects it
