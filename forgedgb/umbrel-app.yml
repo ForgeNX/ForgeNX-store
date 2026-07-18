@@ -5,11 +5,11 @@ name: ForgeDGB
 version: "0.1.0"
 tagline: DigiByte full node + solo mining pool
 description: >-
-  ForgeDGB runs a DigiByte full node (DigiByteCore v8.26.2) and connects
+  ForgeDGB runs a DigiByte full node (DigiByteCore v9.26.4) and connects
   it to the ForgeNX Engine as a solo mining pool.
 
   Features:
-    - DigiByteCore v8.26.2 full node with automatic sync
+    - DigiByteCore v9.26.4 full node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
     - Stratum V1 (standard TCP)
     - Stratum V2 with standard and extended channels (Noise Protocol, ChaCha20-Poly1305 encryption)
@@ -34,7 +34,7 @@ description: >-
     - ForgeNX Engine must be installed and running before installing ForgeDGB
 
   Components:
-    - DigiByteCore v8.26.2 — https://github.com/DigiByte-Core/digibyte/releases
+    - DigiByteCore v9.26.4 — https://github.com/DigiByte-Core/digibyte/releases
     - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
 
   Ports:

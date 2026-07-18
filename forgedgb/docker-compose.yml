@@ -1,0 +1,85 @@
+version: '3.7'
+networks:
+  forgenx_network:
+    external: true
+    name: forgenx_network
+  umbrel_main_network:
+    external: true
+    name: umbrel_main_network
+services:
+  app_proxy:
+    image: getumbrel/app-proxy:1.7.0
+    restart: on-failure
+    environment:
+      APP_HOST: forgedgb-ui
+      APP_PORT: 80
+      DEVICE_DOMAIN_NAME: forgenx.local
+      JWT_SECRET: ${JWT_SECRET}
+      MANAGER_IP: ${HOST_IP}
+      PROXY_AUTH_ADD: 'false'
+      UMBREL_AUTH_SECRET: ${APP_PASSWORD}
+    networks:
+      - umbrel_main_network
+    volumes:
+      - /opt/forgenx/apps/forgedgb/umbrel-app.yml:/extra/umbrel-app.yml:ro
+  init-permissions:
+    image: alpine:3.19
+    restart: 'no'
+    command: >
+      sh -c "
+        mkdir -p /data/node &&
+        mkdir -p /data/logs &&
+        mkdir -p /host-coins &&
+        chown -R 1000:1000 /data
+      "
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      - /var/lib/forgenx/shared/forgenx/coins:/host-coins
+  ui:
+    image: ghcr.io/forgenx/forgedgb-ui:0.1.0
+    container_name: forgedgb-ui
+    restart: unless-stopped
+    networks:
+      - umbrel_main_network
+      - forgenx_network
+  node:
+    image: ghcr.io/forgenx/forgedgb:0.1.0
+    container_name: forgedgb-node
+    restart: unless-stopped
+    depends_on:
+      init-permissions:
+        condition: service_completed_successfully
+    environment:
+      - DGB_RPC_USER=${DGB_RPC_USER:-forgedgb}
+      - DGB_RPC_PORT=${DGB_RPC_PORT:-9001}
+      - DGB_RPC_PASS=${DGB_RPC_PASS}
+      - DGB_PRUNE=${DGB_PRUNE:-0}
+      - DGB_NETWORK=${DGB_NETWORK:-mainnet}
+      - DGB_AUTO_START=${DGB_AUTO_START:-true}
+      - DGB_PAYOUT_ADDRESS=${DGB_PAYOUT_ADDRESS:-}
+      - DGB_WORKER_NAME=${DGB_WORKER_NAME:-}
+      - DGB_DIFF_PRESET=${DGB_DIFF_PRESET:-home}
+      - DGB_START_DIFF=${DGB_START_DIFF:-512}
+      - DGB_MIN_DIFF=${DGB_MIN_DIFF:-256}
+      - DGB_MAX_DIFF=${DGB_MAX_DIFF:-16384}
+      - DGB_DONATION1_PCT=${DGB_DONATION1_PCT:-1.0}
+      - DGB_DONATION2_ADDR=${DGB_DONATION2_ADDR:-}
+      - DGB_DONATION2_PCT=${DGB_DONATION2_PCT:-0}
+      - COIN_ID=dgb
+      - STRATUM_PORT=3333
+      - P2P_PORT=12024
+      - RPC_PORT=9001
+      - ZMQ_PORT=28332
+    ports:
+      - "12024:12024"
+      - "9001:9001"
+      - "28332:28332"
+    volumes:
+      - ${APP_DATA_DIR}/data/node:/data/.digibyte
+      - /var/lib/forgenx/shared/forgenx/coins:/pool/coins
+      - ${APP_DATA_DIR}/data/logs:/data/logs
+    networks:
+      umbrel_main_network:
+      forgenx_network:
+        aliases:
+          - forgedgb-node
