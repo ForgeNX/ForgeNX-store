@@ -41,7 +41,7 @@ services:
       - /var/lib/forgenx/shared/forgenx/coins:/host-coins
 
   ui:
-    image: ghcr.io/forgenx/forgebch-ui:1.0.99
+    image: ghcr.io/forgenx/forgebch-ui:1.0.101
     container_name: forgebch-ui
     restart: unless-stopped
     networks:
