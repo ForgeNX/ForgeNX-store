@@ -49,7 +49,7 @@ services:
       - forgenx_network
 
   node:
-    image: ghcr.io/forgenx/forgebch:1.0.10
+    image: ghcr.io/forgenx/forgebch:1.0.11
     container_name: forgebch-node
     restart: unless-stopped
     depends_on:
