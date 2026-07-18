@@ -43,7 +43,7 @@ services:
       - umbrel_main_network
       - forgenx_network
   node:
-    image: ghcr.io/forgenx/forgedgb:0.1.1
+    image: ghcr.io/forgenx/forgedgb:0.1.2
     container_name: forgedgb-node
     restart: unless-stopped
     depends_on:
