@@ -51,6 +51,7 @@ services:
   node:
     image: ghcr.io/forgenx/forgebch:1.0.15
     container_name: forgebch-node
+    stop_grace_period: 5m
     restart: unless-stopped
     depends_on:
       init-permissions:
