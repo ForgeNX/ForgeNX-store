@@ -43,9 +43,9 @@ services:
       - umbrel_main_network
       - forgenx_network
   node:
-    image: ghcr.io/forgenx/forgedgb:0.1.16
+    image: ghcr.io/forgenx/forgedgb:0.1.17
     container_name: forgedgb-node
-    stop_grace_period: 5m
+    stop_grace_period: 15m30s
     restart: unless-stopped
     depends_on:
       init-permissions:
