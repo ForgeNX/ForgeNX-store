@@ -36,7 +36,7 @@ services:
       - ${APP_DATA_DIR}/data:/data
       - /var/lib/forgenx/shared/forgenx/coins:/host-coins
   ui:
-    image: ghcr.io/forgenx/forgedgb-ui:0.1.8
+    image: ghcr.io/forgenx/forgedgb-ui:0.1.9
     container_name: forgedgb-ui
     restart: unless-stopped
     networks:
