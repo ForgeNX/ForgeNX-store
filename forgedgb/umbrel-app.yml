@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgedgb
 category: bitcoin
 name: ForgeDGB
-version: "0.1.13"
+version: "0.1.14"
 tagline: DigiByte full node + solo mining pool
 description: >-
   ForgeDGB runs a DigiByte full node (DigiByteCore v9.26.4) and connects
