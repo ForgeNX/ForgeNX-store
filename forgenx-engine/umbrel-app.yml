@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgenx-engine
 category: bitcoin
 name: ForgeNX Engine
-version: "1.0.220"
+version: "1.0.221"
 tagline: Multi-coin Stratum mining engine
 
 description: >-
