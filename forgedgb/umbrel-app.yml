@@ -2,13 +2,13 @@ manifestVersion: 1
 id: forgedgb
 category: bitcoin
 name: ForgeDGB
-version: "0.1.111"
+version: "0.1.112"
 tagline: DigiByte full node + solo mining pool
 description: >-
-  ForgeDGB runs a DigiByte full node (DigiByteCore v9.26.5) and connects it
+  ForgeDGB runs a DigiByte full node (DigiByteCore v9.26.7) and connects it
   to the ForgeNX Engine as a solo mining pool.
   Features:
-    - DigiByteCore v9.26.5 full node with automatic sync
+    - DigiByteCore v9.26.7 full node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum
     - Real-time node stats in the ForgeNX dashboard
     - Pruned mode support (saves disk space, min 2000 MB)
@@ -24,7 +24,7 @@ description: >-
     - SSD strongly recommended for node performance
     - ForgeNX Engine must be installed and running before installing ForgeDGB
   Components:
-    - DigiByteCore v9.26.5 — https://github.com/DigiByte-Core/digibyte
+    - DigiByteCore v9.26.7 — https://github.com/DigiByte-Core/digibyte
     - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
   Ports:
     - P2P: 12024
