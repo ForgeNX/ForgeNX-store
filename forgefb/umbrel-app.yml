@@ -5,35 +5,34 @@ name: ForgeFB
 version: "0.1.0"
 tagline: Fractal Bitcoin full node + solo mining pool
 description: >-
-  ForgeFB runs a Fractal Bitcoin full node (v0.3.0) and connects it to the
+  ForgeFB runs a Fractal Bitcoin node (v0.4.0) and connects it to the
   ForgeNX Engine as a solo mining pool.
 
   Features:
-    - Fractal Bitcoin v0.3.0 full node with automatic sync
+    - Fractal Bitcoin v0.4.0 node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
-    - Stratum V1 (standard TCP)
-    - Stratum V2 with standard and extended channels (Noise Protocol, ChaCha20-Poly1305 encryption)
     - Real-time node stats in the ForgeNX dashboard
-    - Pruned mode support (saves disk space)
-    - ZMQ block/transaction publishing for pool engine
+    - Pruned by default (keeps the newest ~10 GB of blocks)
+    - ZMQ block/transaction publishing for the pool engine
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
 
   Miner connection (via ForgeNX Engine):
     - Stratum V1 URL: stratum+tcp://<your-server-ip>:3337
     - Stratum V2 URL: stratum+tcp://<your-server-ip>:4337
-    - Username: your payout address (or address.workername)
+    - Username: your Fractal payout address (or address.workername)
     - Password: anything
-    - Stratum V2: add the authority public key from the Overview tab to your miner's pool settings
 
   Notes:
-    - Fractal Bitcoin is a Bitcoin Layer-2 scaling network using recursive SNARKs
-    - Fractal Bitcoin uses 30-second target block times
-    - First sync can take several hours depending on hardware
-    - SSD strongly recommended
+    - Fractal Bitcoin is a SHA-256 chain built from Bitcoin Core's code, with
+      30-second blocks on average
+    - Fractal uses Bitcoin's address formats (bc1q..., bc1p..., 1..., 3...)
+    - Needs about 230 GB of disk even when pruned, and growing (the
+      chainstate alone is ~220 GB); an SSD is strongly recommended
+    - The first sync takes a long time
     - ForgeNX Engine must be installed and running before installing ForgeFB
 
   Components:
-    - Fractal Bitcoin v0.3.0 — https://github.com/fractal-bitcoin/fractald-release/releases
+    - Fractal Bitcoin node v0.4.0 — https://github.com/fractal-bitcoin/fractald-release
     - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
 
   Ports:
@@ -42,16 +41,13 @@ description: >-
     - ZMQ: 28336 (internal)
     - Stratum V1: 3337 (via ForgeNX Engine)
     - Stratum V2: 4337 (via ForgeNX Engine)
-
-  Status:
-    - v0.1.0: Coming soon. Node software integration in progress.
 developer: ForgeNX
-website: https://github.com/ForgeNX
-repo: https://github.com/ForgeNX
-support: https://github.com/ForgeNX
+website: https://github.com/ForgeNX/forgefb
+repo: https://github.com/ForgeNX/forgefb
+support: https://github.com/ForgeNX/forgefb/issues
 dependencies:
   - forgenx-engine
-port: 9005
+port: 80
 icon: icon.png
 gallery: []
 path: ""
@@ -59,3 +55,4 @@ defaultUsername: ""
 defaultPassword: ""
 submitter: ForgeNX
 node_symbol: FB
+releaseDate: "2026-10-11"
