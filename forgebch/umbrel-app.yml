@@ -59,4 +59,5 @@ defaultUsername: ""
 defaultPassword: ""
 submitter: ForgeNX
 node_symbol: BCH
+disk_gb: 15  # about how much disk it needs (pruned node: the chainstate plus its newest blocks); ForgeNX checks for it before installing
 releaseDate: "2026-10-15"

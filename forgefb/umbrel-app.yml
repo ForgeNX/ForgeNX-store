@@ -55,4 +55,5 @@ defaultUsername: ""
 defaultPassword: ""
 submitter: ForgeNX
 node_symbol: FB
+disk_gb: 260  # about how much disk it needs (pruned node: the chainstate alone is ~220 GB and growing); ForgeNX checks for it before installing
 releaseDate: "2026-10-15"
