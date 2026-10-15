@@ -1,0 +1,83 @@
+version: '3.7'
+
+networks:
+  forgenx_network:
+    external: true
+    name: forgenx_network
+  umbrel_main_network:
+    external: true
+    name: umbrel_main_network
+
+services:
+
+  app_proxy:
+    image: getumbrel/app-proxy:1.7.0
+    restart: on-failure
+    environment:
+      APP_HOST: forgenmc-ui
+      APP_PORT: 80
+      DEVICE_DOMAIN_NAME: forgenx.local
+      JWT_SECRET: ${JWT_SECRET}
+      MANAGER_IP: ${HOST_IP}
+      PROXY_AUTH_ADD: 'false'
+      UMBREL_AUTH_SECRET: ${APP_PASSWORD}
+    networks:
+      - umbrel_main_network
+    volumes:
+      - /opt/forgenx/apps/forgenmc/umbrel-app.yml:/extra/umbrel-app.yml:ro
+
+  init-permissions:
+    image: alpine:3.19
+    restart: 'no'
+    command: >
+      sh -c "
+        mkdir -p /data/node &&
+        mkdir -p /data/logs &&
+        mkdir -p /host-coins &&
+        chown -R 1000:1000 /data
+      "
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      - /var/lib/forgenx/shared/forgenx/coins:/host-coins
+
+  ui:
+    image: ghcr.io/forgenx/forgenmc-ui:0.1.0
+    container_name: forgenmc-ui
+    restart: unless-stopped
+    networks:
+      - umbrel_main_network
+      - forgenx_network
+
+  node:
+    image: ghcr.io/forgenx/forgenmc:0.1.0
+    container_name: forgenmc-node
+    stop_grace_period: 5m
+    restart: unless-stopped
+    depends_on:
+      init-permissions:
+        condition: service_completed_successfully
+    environment:
+      - NMC_RPC_USER=${NMC_RPC_USER:-forgenx}
+      - NMC_RPC_PORT=${NMC_RPC_PORT:-9009}
+      - NMC_RPC_PASS=${NMC_RPC_PASS}
+      - NMC_PRUNE=${NMC_PRUNE:-2048}
+      - NMC_NETWORK=${NMC_NETWORK:-mainnet}
+      - NMC_AUTO_START=${NMC_AUTO_START:-true}
+      - NMC_PAYOUT_ADDRESS=${NMC_PAYOUT_ADDRESS:-}
+      - COIN_ID=nmc
+      - P2P_PORT=8347
+      - RPC_PORT=9009
+      - ZMQ_PORT=28340
+    ports:
+      - "8347:8347"    # P2P
+      - "9009:9009"    # RPC (internal use only)
+      - "28340:28340"  # ZMQ
+    volumes:
+      - ${APP_DATA_DIR}/data/node:/data/.namecoin
+      - /var/lib/forgenx/shared/forgenx/coins:/pool/coins
+      - ${APP_DATA_DIR}/data/logs:/data/logs
+    networks:
+      umbrel_main_network:
+      forgenx_network:
+        aliases:
+          - forgenmc-node
