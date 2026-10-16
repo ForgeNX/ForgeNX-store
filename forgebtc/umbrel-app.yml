@@ -5,39 +5,35 @@ name: ForgeBTC
 version: "0.1.0"
 tagline: Bitcoin full node + solo mining pool
 description: >-
-  ForgeBTC runs a Bitcoin full node and connects it to the ForgeNX Engine
-  as a solo mining pool. Supports both Bitcoin Knots (default, recommended)
-  and Bitcoin Core.
+  ForgeBTC runs a Bitcoin Core node (v31.1) and connects it to the
+  ForgeNX Engine as a solo mining pool.
 
   Features:
-    - Bitcoin Knots v29.3 (default) or Bitcoin Core v31.0 — your choice at install
-    - Bitcoin Knots recommended: enhanced spam filtering and policy controls
+    - Bitcoin Core v31.1 node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
-    - Stratum V1 (standard TCP)
-    - Stratum V2 with standard and extended channels (Noise Protocol, ChaCha20-Poly1305 encryption)
     - Real-time node stats in the ForgeNX dashboard
-    - Pruned mode support (saves disk space)
-    - ZMQ block/transaction publishing for pool engine
+    - Pruned by default (keeps the newest ~10 GB of blocks)
+    - ZMQ block/transaction publishing for the pool engine
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
+    - Merge-mines Fractal Bitcoin and Namecoin through the ForgeNX Engine
+      (Merged tab) when ForgeFB / ForgeNMC are installed
 
   Miner connection (via ForgeNX Engine):
     - Stratum V1 URL: stratum+tcp://<your-server-ip>:3335
     - Stratum V2 URL: stratum+tcp://<your-server-ip>:4335
-    - Username: your payout address (or address.workername)
+    - Username: your Bitcoin payout address (or address.workername)
     - Password: anything
-    - Stratum V2: add the authority public key from the Overview tab to your miner's pool settings
 
   Notes:
-    - Bitcoin requires significant disk space even in pruned mode (min 550 MB)
-    - Full (non-pruned) sync requires 700 GB+
-    - First sync can take 12–48 hours depending on hardware
-    - SSD strongly recommended
+    - Payout addresses: bc1q..., bc1p... (taproot), 1... or 3...
+    - Needs about 25 GB of disk when pruned (the chainstate, about 11 GB,
+      can't be pruned); a full, unpruned node is over 750 GB
+    - The first sync takes a long time (a day or more); an SSD is strongly
+      recommended
     - ForgeNX Engine must be installed and running before installing ForgeBTC
-    - Solo mining Bitcoin is extremely unlikely without significant hashrate (EH/s range)
 
   Components:
-    - Bitcoin Knots v29.3 — https://github.com/bitcoinknots/bitcoin/releases (default)
-    - Bitcoin Core v31.0 — https://github.com/bitcoin/bitcoin/releases (optional)
+    - Bitcoin Core v31.1 — https://bitcoincore.org
     - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
 
   Ports:
@@ -46,16 +42,13 @@ description: >-
     - ZMQ: 28334 (internal)
     - Stratum V1: 3335 (via ForgeNX Engine)
     - Stratum V2: 4335 (via ForgeNX Engine)
-
-  Status:
-    - v0.1.0: Coming soon. Node software integration in progress.
 developer: ForgeNX
-website: https://github.com/ForgeNX
-repo: https://github.com/ForgeNX
-support: https://github.com/ForgeNX
+website: https://github.com/ForgeNX/forgebtc
+repo: https://github.com/ForgeNX/forgebtc
+support: https://github.com/ForgeNX/forgebtc/issues
 dependencies:
   - forgenx-engine
-port: 9003
+port: 80
 icon: icon.png
 gallery: []
 path: ""
@@ -63,3 +56,4 @@ defaultUsername: ""
 defaultPassword: ""
 submitter: ForgeNX
 node_symbol: BTC
+releaseDate: "2026-10-16"
