@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgedgb
 category: bitcoin
 name: ForgeDGB
-version: "0.1.129"
+version: "0.1.130"
 tagline: DigiByte full node + solo mining pool
 description: >-
   ForgeDGB runs a DigiByte full node (DigiByteCore v9.26.7) and connects it
@@ -48,4 +48,4 @@ defaultPassword: ""
 submitter: ForgeNX
 node_symbol: DGB
 disk_gb: 15  # about how much disk it needs (pruned node: the chainstate plus its newest blocks); ForgeNX checks for it before installing
-releaseDate: "2026-10-17"
+releaseDate: "2026-10-18"
