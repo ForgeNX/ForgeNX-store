@@ -34,7 +34,7 @@ description: >-
 
   Components:
     - Bitcoin Cash Node (BCHN) v29.0.0 — https://github.com/bitcoin-cash-node/bitcoin-cash-node
-    - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
+    - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
 
   Ports:
     - P2P: 8333

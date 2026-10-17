@@ -10,10 +10,18 @@ description: >-
   ForgeNX Engine provides a lightweight Stratum mining server
   capable of running multi-coin solo mining pools.
 
+
+  Built using GoStratumEngine, developed by MMFP Solutions LLC:
+  https://get.gostratumengine.io/
+
+releaseNotes: >-
+  Built using GoStratumEngine, developed by MMFP Solutions LLC:
+  https://get.gostratumengine.io/
+
 developer: ForgeNX
-website: https://github.com/ForgeNX/forgenx-engine
-repo: https://github.com/ForgeNX/forgenx-engine
-support: https://github.com/ForgeNX/forgenx-engine
+website: https://www.forgenx.io
+repo: https://github.com/ForgeNX/forgenx
+support: https://github.com/ForgeNX/forgenx
 
 dependencies: []
 port: 8080

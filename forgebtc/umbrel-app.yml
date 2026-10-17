@@ -34,7 +34,7 @@ description: >-
 
   Components:
     - Bitcoin Core v31.1 — https://bitcoincore.org
-    - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
+    - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
 
   Ports:
     - P2P: 8335

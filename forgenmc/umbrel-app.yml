@@ -30,7 +30,7 @@ description: >-
 
   Components:
     - Namecoin Core v28.0 — https://www.namecoin.org/download/
-    - ForgeNX Engine — https://github.com/ForgeNX/forgenx-engine
+    - ForgeNX Engine — https://www.forgenx.io
 
   Ports:
     - P2P: 8347

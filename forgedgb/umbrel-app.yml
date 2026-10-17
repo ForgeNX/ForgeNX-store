@@ -25,7 +25,7 @@ description: >-
     - ForgeNX Engine must be installed and running before installing ForgeDGB
   Components:
     - DigiByteCore v9.26.7 — https://github.com/DigiByte-Core/digibyte
-    - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
+    - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
   Ports:
     - P2P: 12024
     - RPC: 9001 (internal)

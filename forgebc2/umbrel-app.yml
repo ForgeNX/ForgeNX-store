@@ -32,7 +32,7 @@ description: >-
 
   Components:
     - BitcoinII Core v29.10 — https://github.com/Bitcoin-II/BitcoinII-Core/releases
-    - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
+    - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
 
   Ports:
     - P2P: 8341

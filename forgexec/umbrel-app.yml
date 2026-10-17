@@ -40,7 +40,7 @@ description: >-
 
   Components:
     - Bitcoin ABC v0.34.1 — https://www.bitcoinabc.org
-    - ForgeNX Engine (Stratum pool) — https://github.com/ForgeNX/forgenx-engine
+    - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
 
   Ports:
     - P2P: 8337
