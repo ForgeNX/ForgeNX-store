@@ -2,36 +2,39 @@ manifestVersion: 1
 id: forgebc2
 category: bitcoin
 name: ForgeBC2
-version: "0.1.0"
+version: "0.1.1"
 tagline: Bitcoin II full node + solo mining pool
 description: >-
-  ForgeBC2 runs a Bitcoin II full node (BitcoinII Core v29.10) and connects
-  it to the ForgeNX Engine as a solo mining pool.
+  ForgeBC2 runs a BitcoinII Core node (v31.1) and connects it to the
+  ForgeNX Engine as a solo mining pool.
 
   Features:
-    - BitcoinII Core v29.10 full node with automatic sync
+    - BitcoinII Core v31.1 node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
-    - Stratum V1 (standard TCP)
-    - Stratum V2 with standard and extended channels (Noise Protocol, ChaCha20-Poly1305 encryption)
     - Real-time node stats in the ForgeNX dashboard
-    - Pruned mode support (saves disk space)
-    - ZMQ block/transaction publishing for pool engine
+    - Pruned by default (keeps the newest ~10 GB of blocks)
+    - ZMQ block/transaction publishing for the pool engine
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
 
   Miner connection (via ForgeNX Engine):
     - Stratum V1 URL: stratum+tcp://<your-server-ip>:3338
     - Stratum V2 URL: stratum+tcp://<your-server-ip>:4338
-    - Username: your payout address (or address.workername)
+    - Username: your Bitcoin II payout address (or address.workername)
     - Password: anything
-    - Stratum V2: add the authority public key from the Overview tab to your miner's pool settings
 
   Notes:
-    - First sync can take several hours depending on hardware
-    - SSD strongly recommended
+    - Payout addresses: bc1q..., 1... or 3... from a Bitcoin II wallet.
+      Bitcoin II addresses look the same as Bitcoin's, so make sure the
+      address is from your Bitcoin II wallet
+    - BitcoinII Core is downloaded from BitcoinII's official GitHub release
+      on the first start (and checked against its published checksum), so
+      the first start needs an internet connection
+    - 64-bit PCs (x86-64) only: BitcoinII publishes no Linux ARM build
+    - The first sync can take several hours; an SSD is strongly recommended
     - ForgeNX Engine must be installed and running before installing ForgeBC2
 
   Components:
-    - BitcoinII Core v29.10 — https://github.com/Bitcoin-II/BitcoinII-Core/releases
+    - BitcoinII Core v31.1 — https://github.com/Bitcoin-II/BitcoinII-Core
     - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
 
   Ports:
@@ -40,16 +43,13 @@ description: >-
     - ZMQ: 28337 (internal)
     - Stratum V1: 3338 (via ForgeNX Engine)
     - Stratum V2: 4338 (via ForgeNX Engine)
-
-  Status:
-    - v0.1.0: Coming soon. Node software integration in progress.
 developer: ForgeNX
-website: https://github.com/ForgeNX
-repo: https://github.com/ForgeNX
-support: https://github.com/ForgeNX
+website: https://www.forgenx.io
+repo: https://github.com/ForgeNX/forgenx
+support: https://github.com/ForgeNX/forgenx
 dependencies:
   - forgenx-engine
-port: 9006
+port: 80
 icon: icon.png
 gallery: []
 path: ""
@@ -57,3 +57,4 @@ defaultUsername: ""
 defaultPassword: ""
 submitter: ForgeNX
 node_symbol: BC2
+releaseDate: "2026-10-18"
