@@ -1,0 +1,95 @@
+version: '3.7'
+
+networks:
+  forgenx_network:
+    external: true
+    name: forgenx_network
+  umbrel_main_network:
+    external: true
+    name: umbrel_main_network
+
+services:
+
+  app_proxy:
+    image: getumbrel/app-proxy:1.7.0
+    restart: on-failure
+    environment:
+      APP_HOST: forgeppc-ui
+      APP_PORT: 80
+      DEVICE_DOMAIN_NAME: forgenx.local
+      JWT_SECRET: ${JWT_SECRET}
+      MANAGER_IP: ${HOST_IP}
+      PROXY_AUTH_ADD: 'false'
+      UMBREL_AUTH_SECRET: ${APP_PASSWORD}
+    networks:
+      - umbrel_main_network
+    volumes:
+      - /opt/forgenx/apps/forgeppc/umbrel-app.yml:/extra/umbrel-app.yml:ro
+
+  init-permissions:
+    image: alpine:3.19
+    restart: 'no'
+    command: >
+      sh -c "
+        mkdir -p /data/node &&
+        mkdir -p /data/logs &&
+        mkdir -p /host-coins &&
+        chown -R 1000:1000 /data
+      "
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      - /var/lib/forgenx/shared/forgenx/coins:/host-coins
+
+  ui:
+    image: ghcr.io/forgenx/forgeppc-ui:0.1.0
+    container_name: forgeppc-ui
+    restart: unless-stopped
+    networks:
+      - umbrel_main_network
+      - forgenx_network
+
+  node:
+    image: ghcr.io/forgenx/forgeppc:0.1.0
+    container_name: forgeppc-node
+    stop_grace_period: 15m30s
+    restart: unless-stopped
+    depends_on:
+      init-permissions:
+        condition: service_completed_successfully
+    environment:
+      - PPC_RPC_USER=${PPC_RPC_USER:-forgeppc}
+      - PPC_RPC_PORT=${PPC_RPC_PORT:-9008}
+      - PPC_RPC_PASS=${PPC_RPC_PASS}
+      - PPC_PRUNE=${PPC_PRUNE:-0}
+      - PPC_NETWORK=${PPC_NETWORK:-mainnet}
+      - PPC_AUTO_START=${PPC_AUTO_START:-true}
+      - PPC_PAYOUT_ADDRESS=${PPC_PAYOUT_ADDRESS:-}
+      - PPC_WORKER_NAME=${PPC_WORKER_NAME:-}
+      - PPC_DIFF_PRESET=${PPC_DIFF_PRESET:-home}
+      - PPC_START_DIFF=${PPC_START_DIFF:-128}
+      - PPC_MIN_DIFF=${PPC_MIN_DIFF:-32}
+      - PPC_MAX_DIFF=${PPC_MAX_DIFF:-4096}
+      - PPC_DONATION1_ADDR=${PPC_DONATION1_ADDR:-}
+      - PPC_DONATION1_ENABLED=${PPC_DONATION1_ENABLED:-true}
+      - PPC_DONATION1_PCT=${PPC_DONATION1_PCT:-1.0}
+      - PPC_DONATION2_ENABLED=${PPC_DONATION2_ENABLED:-false}
+      - PPC_DONATION2_ADDR=${PPC_DONATION2_ADDR:-}
+      - PPC_DONATION2_PCT=${PPC_DONATION2_PCT:-0}
+      - COIN_ID=ppc
+      - STRATUM_PORT=3340
+      - P2P_PORT=8345
+      - RPC_PORT=9008
+      - ZMQ_PORT=28339
+    ports:
+      - "8345:8345"    # P2P
+      - "9008:9008"    # RPC (internal use only)
+      - "28339:28339"  # ZMQ
+    volumes:
+      - ${APP_DATA_DIR}/data/node:/data/.peercoin
+      - /var/lib/forgenx/shared/forgenx/coins:/pool/coins
+      - ${APP_DATA_DIR}/data/logs:/data/logs
+    networks:
+      umbrel_main_network:
+      forgenx_network:
+        aliases:
+          - forgeppc-node

@@ -1,0 +1,58 @@
+manifestVersion: 1
+id: forgeppc
+category: bitcoin
+name: ForgePPC
+version: "0.1.1"
+tagline: Peercoin full node + solo mining pool
+description: >-
+  ForgePPC runs a Peercoin Core node (v0.15.1) and connects it to the
+  ForgeNX Engine as a solo mining pool for Peercoin's proof-of-work blocks.
+
+  Features:
+    - Peercoin Core v0.15.1 node with automatic sync
+    - Connects automatically to ForgeNX Engine via Stratum V1 & V2
+    - Real-time node stats in the ForgeNX dashboard
+    - ZMQ block/transaction publishing for the pool engine
+    - Adjustable difficulty presets (Home, Small Farm, Large Farm)
+
+  Miner connection (via ForgeNX Engine):
+    - Stratum V1 URL: stratum+tcp://<your-server-ip>:3340
+    - Stratum V2 URL: stratum+tcp://<your-server-ip>:4340
+    - Username: your Peercoin payout address (or address.workername)
+    - Password: anything
+
+  Notes:
+    - Payout addresses: P..., p... or pc1q...
+    - A mined block's reward can be spent after 500 confirmations (about
+      3.5 days), as on all of Peercoin's network
+    - Peercoin destroys transaction fees, so a block's reward is its
+      proof-of-work reward only
+    - The full chain is a few GB (Peercoin Core doesn't prune); the first
+      sync can take several hours, and an SSD is strongly recommended
+    - ForgeNX Engine must be installed and running before installing ForgePPC
+
+  Components:
+    - Peercoin Core v0.15.1 — https://github.com/peercoin/peercoin
+    - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
+
+  Ports:
+    - P2P: 8345
+    - RPC: 9008 (internal)
+    - ZMQ: 28339 (internal)
+    - Stratum V1: 3340 (via ForgeNX Engine)
+    - Stratum V2: 4340 (via ForgeNX Engine)
+developer: ForgeNX
+website: https://www.forgenx.io
+repo: https://github.com/ForgeNX/forgenx
+support: https://github.com/ForgeNX/forgenx
+dependencies:
+  - forgenx-engine
+port: 80
+icon: icon.png
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: ForgeNX
+node_symbol: PPC
+releaseDate: "2026-10-18"
