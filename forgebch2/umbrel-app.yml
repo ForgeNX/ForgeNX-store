@@ -1,0 +1,58 @@
+manifestVersion: 1
+id: forgebch2
+category: bitcoin
+name: ForgeBCH2
+version: "0.1.0"
+tagline: Bitcoin Cash II full node + solo mining pool
+description: >-
+  ForgeBCH2 runs a Bitcoin Cash II Core node (v27.0.2) and connects it to the
+  ForgeNX Engine as a solo mining pool.
+
+  Features:
+    - Bitcoin Cash II Core v27.0.2 node with automatic sync
+    - Connects automatically to ForgeNX Engine via Stratum V1 & V2
+    - Real-time node stats in the ForgeNX dashboard
+    - Pruned by default (keeps the newest ~10 GB of blocks)
+    - ZMQ block/transaction publishing for the pool engine
+    - Adjustable difficulty presets (Home, Small Farm, Large Farm)
+
+  Miner connection (via ForgeNX Engine):
+    - Stratum V1 URL: stratum+tcp://<your-server-ip>:3342
+    - Stratum V2 URL: stratum+tcp://<your-server-ip>:4342
+    - Username: your Bitcoin Cash II payout address (or address.workername)
+    - Password: anything
+
+  Notes:
+    - Payout addresses: bitcoincashii:q... or bitcoincashii:p... (CashAddr),
+      or the legacy 1... and 3... forms, from a Bitcoin Cash II wallet
+    - Bitcoin Cash II split from Bitcoin II at block 53,200: it has Bitcoin
+      Cash's rules (32 MB blocks, ASERT difficulty, no SegWit)
+    - 64-bit PCs (x86-64) only: Bitcoin Cash II publishes no Linux ARM build
+    - The first sync can take several hours; an SSD is strongly recommended
+    - ForgeNX Engine must be installed and running before installing ForgeBCH2
+
+  Components:
+    - Bitcoin Cash II Core v27.0.2 — https://github.com/BitcoincashII/bitcoincashII-core
+    - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
+
+  Ports:
+    - P2P: 8349
+    - RPC: 9010 (internal)
+    - ZMQ: 28341 (internal)
+    - Stratum V1: 3342 (via ForgeNX Engine)
+    - Stratum V2: 4342 (via ForgeNX Engine)
+developer: ForgeNX
+website: https://www.forgenx.io
+repo: https://github.com/ForgeNX/forgenx
+support: https://github.com/ForgeNX/forgenx
+dependencies:
+  - forgenx-engine
+port: 80
+icon: icon.png
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: ForgeNX
+node_symbol: BCH2
+releaseDate: "2026-10-22"
