@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgeppc
 category: bitcoin
 name: ForgePPC
-version: "0.1.2"
+version: "0.1.3"
 tagline: Peercoin full node + solo mining pool
 description: >-
   ForgePPC runs a Peercoin Core node (v0.15.1) and connects it to the
@@ -55,4 +55,4 @@ defaultUsername: ""
 defaultPassword: ""
 submitter: ForgeNX
 node_symbol: PPC
-releaseDate: "2026-10-18"
+releaseDate: "2026-10-22"
