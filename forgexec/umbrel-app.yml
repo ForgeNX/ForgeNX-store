@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgexec
 category: bitcoin
 name: ForgeXEC
-version: "0.1.8"
+version: "0.1.9"
 tagline: eCash full node + solo mining pool
 description: >-
   ForgeXEC runs an eCash (XEC) node (Bitcoin ABC v0.34.1) and connects it to
