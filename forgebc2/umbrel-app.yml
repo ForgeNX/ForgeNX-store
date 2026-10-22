@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgebc2
 category: bitcoin
 name: ForgeBC2
-version: "0.1.3"
+version: "0.1.4"
 tagline: Bitcoin II full node + solo mining pool
 description: >-
   ForgeBC2 runs a BitcoinII Core node (v31.1) and connects it to the
