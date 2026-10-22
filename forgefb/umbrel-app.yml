@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgefb
 category: bitcoin
 name: ForgeFB
-version: "0.1.15"
+version: "0.1.16"
 tagline: Fractal Bitcoin full node + solo mining pool
 description: >-
   ForgeFB runs a Fractal Bitcoin node (v0.4.0) and connects it to the
