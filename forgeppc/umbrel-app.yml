@@ -5,11 +5,11 @@ name: ForgePPC
 version: "0.1.6"
 tagline: Peercoin full node + solo mining pool
 description: >-
-  ForgePPC runs a Peercoin Core node (v0.15.1) and connects it to the
+  ForgePPC runs a Peercoin Core node (v0.15.2) and connects it to the
   ForgeNX Engine as a solo mining pool for Peercoin's proof-of-work blocks.
 
   Features:
-    - Peercoin Core v0.15.1 node with automatic sync
+    - Peercoin Core v0.15.2 node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
     - Real-time node stats in the ForgeNX dashboard
     - ZMQ block/transaction publishing for the pool engine
@@ -32,7 +32,7 @@ description: >-
     - ForgeNX Engine must be installed and running before installing ForgePPC
 
   Components:
-    - Peercoin Core v0.15.1 — https://github.com/peercoin/peercoin
+    - Peercoin Core v0.15.2 — https://github.com/peercoin/peercoin
     - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
 
   Ports:

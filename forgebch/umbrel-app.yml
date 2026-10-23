@@ -5,11 +5,11 @@ name: ForgeBCH
 version: "1.0.205"
 tagline: Bitcoin Cash full node + solo mining pool
 description: >-
-  ForgeBCH runs a Bitcoin Cash full node (BCHN v29.0.0) and connects it
+  ForgeBCH runs a Bitcoin Cash full node (BCHN v29.2.0) and connects it
   to the ForgeNX Engine as a solo mining pool.
 
   Features:
-    - BCHN v29.0.0 full node with automatic sync
+    - BCHN v29.2.0 full node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
     - Stratum V1 (standard TCP)
     - Stratum V2 with standard and extended channels (Noise Protocol, ChaCha20-Poly1305 encryption)
@@ -33,7 +33,7 @@ description: >-
     - ForgeNX Engine must be installed and running before installing ForgeBCH
 
   Components:
-    - Bitcoin Cash Node (BCHN) v29.0.0 — https://github.com/bitcoin-cash-node/bitcoin-cash-node
+    - Bitcoin Cash Node (BCHN) v29.2.0 — https://github.com/bitcoin-cash-node/bitcoin-cash-node
     - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
 
   Ports:
