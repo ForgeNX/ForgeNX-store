@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgenmc
 category: bitcoin
 name: ForgeNMC
-version: "0.1.11"
+version: "0.1.12"
 tagline: Namecoin full node, merge-mined with ForgeNX Engine
 description: >-
   ForgeNMC runs a Namecoin node (v31.1) for ForgeNX Engine to merge-mine.
