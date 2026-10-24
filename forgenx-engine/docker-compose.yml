@@ -63,6 +63,8 @@ services:
       - "8080:8080"
       # Nexus Mesh: one address for miners, bonded to every coin
       - "3350:3350"
+      # SV2 Mesh: the same, for Stratum V2 miners
+      - "4350:4350"
 
     volumes:
       - ${APP_DATA_DIR}/data/pool/logs:/pool/logs
