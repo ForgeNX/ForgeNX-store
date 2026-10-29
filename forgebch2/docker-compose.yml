@@ -49,7 +49,7 @@ services:
       - forgenx_network
 
   node:
-    image: ghcr.io/forgenx/forgebch2:0.1.0
+    image: ghcr.io/forgenx/forgebch2:0.1.1
     container_name: forgebch2-node
     stop_grace_period: 15m30s
     restart: unless-stopped
