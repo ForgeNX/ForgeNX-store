@@ -5,13 +5,13 @@ name: ForgeNMC
 version: "0.1.15"
 tagline: Namecoin full node, merge-mined with ForgeNX Engine
 description: >-
-  ForgeNMC runs a Namecoin node (v31.1) for ForgeNX Engine to merge-mine.
+  ForgeNMC runs a Namecoin node (v32.0) for ForgeNX Engine to merge-mine.
   Namecoin has no pool of its own: the engine mines it with the same work as
   a SHA-256 coin you already mine (Bitcoin Cash, Bitcoin, eCash...), so your
   miners earn Namecoin blocks as well, with no extra hashrate.
 
   Features:
-    - Namecoin Core v31.1 node with automatic sync
+    - Namecoin Core v32.0 node with automatic sync
     - Merged mining through ForgeNX Engine (the engine's Merged tab)
     - Real-time node stats in the ForgeNX dashboard
     - Pruned by default (keeps the newest ~2 GB of blocks)
@@ -29,7 +29,7 @@ description: >-
     - ForgeNX Engine must be installed and running before installing ForgeNMC
 
   Components:
-    - Namecoin Core v31.1 — https://github.com/namecoin/namecoin-core
+    - Namecoin Core v32.0 — https://github.com/namecoin/namecoin-core
     - ForgeNX Engine — https://www.forgenx.io
 
   Ports:

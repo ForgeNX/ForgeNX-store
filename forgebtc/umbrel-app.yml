@@ -5,11 +5,11 @@ name: ForgeBTC
 version: "0.1.14"
 tagline: Bitcoin full node + solo mining pool
 description: >-
-  ForgeBTC runs a Bitcoin Core node (v31.1) and connects it to the
+  ForgeBTC runs a Bitcoin Core node (v32.1) and connects it to the
   ForgeNX Engine as a solo mining pool.
 
   Features:
-    - Bitcoin Core v31.1 node with automatic sync
+    - Bitcoin Core v32.1 node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
     - Real-time node stats in the ForgeNX dashboard
     - Pruned by default (keeps the newest ~10 GB of blocks)
@@ -33,7 +33,7 @@ description: >-
     - ForgeNX Engine must be installed and running before installing ForgeBTC
 
   Components:
-    - Bitcoin Core v31.1 — https://bitcoincore.org
+    - Bitcoin Core v32.1 — https://bitcoincore.org
     - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
 
   Ports:

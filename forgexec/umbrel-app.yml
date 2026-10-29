@@ -5,11 +5,11 @@ name: ForgeXEC
 version: "0.1.14"
 tagline: eCash full node + solo mining pool
 description: >-
-  ForgeXEC runs an eCash (XEC) node (Bitcoin ABC v0.34.2) and connects it to
+  ForgeXEC runs an eCash (XEC) node (Bitcoin ABC v0.34.3) and connects it to
   the ForgeNX Engine as a solo mining pool.
 
   Features:
-    - Bitcoin ABC v0.34.2 node with automatic sync, Avalanche on
+    - Bitcoin ABC v0.34.3 node with automatic sync, Avalanche on
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
     - Real-time node stats in the ForgeNX dashboard
     - Pruned by default (keeps the newest ~10 GB of blocks)
@@ -39,7 +39,7 @@ description: >-
     - ForgeNX Engine must be installed and running before installing ForgeXEC
 
   Components:
-    - Bitcoin ABC v0.34.2 — https://www.bitcoinabc.org
+    - Bitcoin ABC v0.34.3 — https://www.bitcoinabc.org
     - ForgeNX Engine (Stratum pool) — https://www.forgenx.io
 
   Ports:
