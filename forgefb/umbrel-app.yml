@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgefb
 category: bitcoin
 name: ForgeFB
-version: "0.1.17"
+version: "0.1.18"
 tagline: Fractal Bitcoin full node + solo mining pool
 description: >-
   ForgeFB runs a Fractal Bitcoin node (v0.4.0) and connects it to the
@@ -56,4 +56,4 @@ defaultPassword: ""
 submitter: ForgeNX
 node_symbol: FB
 disk_gb: 260  # about how much disk it needs (pruned node: the chainstate alone is ~220 GB and growing); ForgeNX checks for it before installing
-releaseDate: "2026-10-22"
+releaseDate: "2026-10-29"
