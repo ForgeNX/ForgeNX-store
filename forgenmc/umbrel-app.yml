@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgenmc
 category: bitcoin
 name: ForgeNMC
-version: "0.1.12"
+version: "0.1.13"
 tagline: Namecoin full node, merge-mined with ForgeNX Engine
 description: >-
   ForgeNMC runs a Namecoin node (v31.1) for ForgeNX Engine to merge-mine.
@@ -51,4 +51,4 @@ defaultPassword: ""
 submitter: ForgeNX
 node_symbol: NMC
 disk_gb: 6  # about how much disk it needs (pruned node, ~2 GB of blocks plus the chainstate and name index); ForgeNX checks for it before installing
-releaseDate: "2026-10-23"
+releaseDate: "2026-10-29"
