@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgebch
 category: bitcoin
 name: ForgeBCH
-version: "1.0.209"
+version: "1.0.210"
 tagline: Bitcoin Cash full node + solo mining pool
 description: >-
   ForgeBCH runs a Bitcoin Cash full node (BCHN v29.2.0) and connects it
@@ -60,4 +60,4 @@ defaultPassword: ""
 submitter: ForgeNX
 node_symbol: BCH
 disk_gb: 15  # about how much disk it needs (pruned node: the chainstate plus its newest blocks); ForgeNX checks for it before installing
-releaseDate: "2026-10-29"
+releaseDate: "2026-10-30"
