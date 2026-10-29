@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgebch2
 category: bitcoin
 name: ForgeBCH2
-version: "0.1.4"
+version: "0.1.5"
 tagline: Bitcoin Cash II full node + solo mining pool
 description: >-
   ForgeBCH2 runs a Bitcoin Cash II Core node (v27.0.2) and connects it to the
