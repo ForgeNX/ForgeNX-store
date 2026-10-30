@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgebtc
 category: bitcoin
 name: ForgeBTC
-version: "0.1.15"
+version: "0.1.16"
 tagline: Bitcoin full node + solo mining pool
 description: >-
   ForgeBTC runs a Bitcoin Core node (v32.1) and connects it to the
