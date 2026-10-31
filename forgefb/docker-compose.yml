@@ -49,7 +49,7 @@ services:
       - forgenx_network
 
   node:
-    image: ghcr.io/forgenx/forgefb:0.1.6
+    image: ghcr.io/forgenx/forgefb:0.1.7
     container_name: forgefb-node
     stop_grace_period: 15m30s
     restart: unless-stopped
