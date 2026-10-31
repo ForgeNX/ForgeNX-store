@@ -2,7 +2,7 @@ manifestVersion: 1
 id: forgebc2
 category: bitcoin
 name: ForgeBC2
-version: "0.1.8"
+version: "0.1.9"
 tagline: Bitcoin II full node + solo mining pool
 description: >-
   ForgeBC2 runs a BitcoinII Core node (v31.1) and connects it to the
@@ -57,4 +57,4 @@ defaultUsername: ""
 defaultPassword: ""
 submitter: ForgeNX
 node_symbol: BC2
-releaseDate: "2026-10-30"
+releaseDate: "2026-10-31"
