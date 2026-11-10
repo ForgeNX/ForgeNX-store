@@ -61,6 +61,7 @@ services:
       - PPC_RPC_PORT=${PPC_RPC_PORT:-9008}
       - PPC_RPC_PASS=${PPC_RPC_PASS}
       - PPC_PRUNE=${PPC_PRUNE:-0}
+      - PPC_MORE_PEERS=${PPC_MORE_PEERS:-true}
       - PPC_NETWORK=${PPC_NETWORK:-mainnet}
       - PPC_AUTO_START=${PPC_AUTO_START:-true}
       - PPC_PAYOUT_ADDRESS=${PPC_PAYOUT_ADDRESS:-}

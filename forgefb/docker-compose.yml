@@ -61,6 +61,7 @@ services:
       - FB_RPC_PORT=${FB_RPC_PORT:-9005}
       - FB_RPC_PASS=${FB_RPC_PASS}
       - FB_PRUNE=${FB_PRUNE:-10000}
+      - FB_MORE_PEERS=${FB_MORE_PEERS:-true}
       - FB_NETWORK=${FB_NETWORK:-mainnet}
       - FB_AUTO_START=${FB_AUTO_START:-true}
       - FB_PAYOUT_ADDRESS=${FB_PAYOUT_ADDRESS:-}

@@ -61,6 +61,7 @@ services:
       - NMC_RPC_PORT=${NMC_RPC_PORT:-9009}
       - NMC_RPC_PASS=${NMC_RPC_PASS}
       - NMC_PRUNE=${NMC_PRUNE:-2048}
+      - NMC_MORE_PEERS=${NMC_MORE_PEERS:-true}
       - NMC_NETWORK=${NMC_NETWORK:-mainnet}
       - NMC_AUTO_START=${NMC_AUTO_START:-true}
       - NMC_PAYOUT_ADDRESS=${NMC_PAYOUT_ADDRESS:-}

@@ -55,6 +55,7 @@ services:
       - DGB_RPC_PORT=${DGB_RPC_PORT:-9001}
       - DGB_RPC_PASS=${DGB_RPC_PASS}
       - DGB_PRUNE=${DGB_PRUNE:-0}
+      - DGB_MORE_PEERS=${DGB_MORE_PEERS:-true}
       - DGB_NETWORK=${DGB_NETWORK:-mainnet}
       - DGB_AUTO_START=${DGB_AUTO_START:-true}
       - DGB_PAYOUT_ADDRESS=${DGB_PAYOUT_ADDRESS:-}
