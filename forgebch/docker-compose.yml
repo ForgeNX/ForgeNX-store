@@ -61,6 +61,7 @@ services:
       - BCH_RPC_PORT=${BCH_RPC_PORT:-9002}
       - BCH_RPC_PASS=${BCH_RPC_PASS}
       - BCH_PRUNE=${BCH_PRUNE:-0}
+      - BCH_MORE_PEERS=${BCH_MORE_PEERS:-true}
       - BCH_NETWORK=${BCH_NETWORK:-mainnet}
       - BCH_AUTO_START=${BCH_AUTO_START:-true}
       - BCH_PAYOUT_ADDRESS=${BCH_PAYOUT_ADDRESS:-}
