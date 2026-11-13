@@ -39,7 +39,7 @@ services:
     restart: "no"
 
   engine:
-    image: ghcr.io/forgenx/forgenx-engine:1.0.526
+    image: ghcr.io/forgenx/forgenx-engine:1.0.527
     restart: unless-stopped
 
     depends_on:
