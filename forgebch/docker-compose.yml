@@ -60,7 +60,7 @@ services:
       - BCH_RPC_USER=${BCH_RPC_USER:-forgebch}
       - BCH_RPC_PORT=${BCH_RPC_PORT:-9002}
       - BCH_RPC_PASS=${BCH_RPC_PASS}
-      - BCH_PRUNE=${BCH_PRUNE:-0}
+      - BCH_PRUNE=${BCH_PRUNE:-10240}
       - BCH_MORE_PEERS=${BCH_MORE_PEERS:-true}
       - BCH_NETWORK=${BCH_NETWORK:-mainnet}
       - BCH_AUTO_START=${BCH_AUTO_START:-true}
@@ -83,8 +83,7 @@ services:
       - ZMQ_PORT=28333
     ports:
       - "8333:8333"    # P2P
-      - "9002:9002"    # RPC (internal use only)
-      - "28333:28333"  # ZMQ
+      - "127.0.0.1:9002:9002"  # RPC: this machine only (the engine reaches the node over Docker's network)
     volumes:
       - ${APP_DATA_DIR}/data/node:/data/.bitcoin
       - /var/lib/forgenx/shared/forgenx/coins:/pool/coins

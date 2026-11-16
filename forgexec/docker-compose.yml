@@ -60,7 +60,7 @@ services:
       - XEC_RPC_USER=${XEC_RPC_USER:-forgexec}
       - XEC_RPC_PORT=${XEC_RPC_PORT:-9004}
       - XEC_RPC_PASS=${XEC_RPC_PASS}
-      - XEC_PRUNE=${XEC_PRUNE:-10000}
+      - XEC_PRUNE=${XEC_PRUNE:-10240}
       - XEC_NETWORK=${XEC_NETWORK:-mainnet}
       - XEC_AUTO_START=${XEC_AUTO_START:-true}
       - XEC_PAYOUT_ADDRESS=${XEC_PAYOUT_ADDRESS:-}
@@ -82,8 +82,7 @@ services:
       - ZMQ_PORT=28335
     ports:
       - "8337:8337"    # P2P
-      - "9004:9004"    # RPC (internal use only)
-      - "28335:28335"  # ZMQ
+      - "127.0.0.1:9004:9004"  # RPC: this machine only (the engine reaches the node over Docker's network)
     volumes:
       - ${APP_DATA_DIR}/data/node:/data/.bitcoin
       - /var/lib/forgenx/shared/forgenx/coins:/pool/coins

@@ -11,6 +11,10 @@ description: >-
   capable of running multi-coin solo mining pools.
 
 
+  A 1% development fee from each block found goes to ForgeNX (merge-mined
+  blocks carry none).
+
+
   Built using GoStratumEngine, developed by MMFP Solutions LLC:
   https://get.gostratumengine.io/
 
@@ -20,8 +24,8 @@ releaseNotes: >-
 
 developer: ForgeNX
 website: https://www.forgenx.io
-repo: https://github.com/ForgeNX/forgenx
-support: https://github.com/ForgeNX/forgenx
+repo: https://www.forgenx.io
+support: https://www.forgenx.io
 
 dependencies: []
 port: 8080

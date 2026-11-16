@@ -11,14 +11,17 @@ description: >-
     - DigiByteCore v9.26.7 full node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum
     - Real-time node stats in the ForgeNX dashboard
-    - Pruned mode support (saves disk space, min 2000 MB)
-    - ZMQ block/transaction publishing for pool engine
+    - Pruned by default (keeps the newest ~10 GB of blocks); switch Prune
+      off in Settings for a full node, which needs far more disk
+    - New-block notices (ZMQ) for the pool engine
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
   Miner connection (via ForgeNX Engine):
     - URL: stratum+tcp://<your-server-ip>:4333
     - Username: your DGB payout address (or address.workername)
     - Password: anything
   Notes:
+    - A 1% development fee from each block found goes to ForgeNX. You can
+      add a donation of your own to any address in the app's Settings
     - Use a native DGB address (starts with D) for widest miner compatibility
     - First sync can take several hours depending on hardware
     - SSD strongly recommended for node performance
@@ -34,9 +37,9 @@ description: >-
   Status:
     - v0.1.1: Production ready. Stable full node + solo pool operation confirmed.
 developer: ForgeNX
-website: https://github.com/ForgeNX/forgedgb
-repo: https://github.com/ForgeNX/forgedgb
-support: https://github.com/ForgeNX/forgedgb/issues
+website: https://www.forgenx.io
+repo: https://www.forgenx.io
+support: https://www.forgenx.io
 dependencies:
   - forgenx-engine
 port: 80
@@ -47,5 +50,5 @@ defaultUsername: ""
 defaultPassword: ""
 submitter: ForgeNX
 node_symbol: DGB
-disk_gb: 15  # about how much disk it needs (pruned node: the chainstate plus its newest blocks); ForgeNX checks for it before installing
+disk_gb: 20  # about how much disk it needs (pruned node: the newest ~10 GB of blocks plus the chainstate and block index); ForgeNX checks for it before installing
 releaseDate: "2026-11-10"

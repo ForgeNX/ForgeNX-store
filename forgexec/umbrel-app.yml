@@ -13,7 +13,7 @@ description: >-
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
     - Real-time node stats in the ForgeNX dashboard
     - Pruned by default (keeps the newest ~10 GB of blocks)
-    - ZMQ block/transaction publishing for the pool engine
+    - New-block notices (ZMQ) for the pool engine
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
     - Can carry Fractal Bitcoin and Namecoin by merged mining (ForgeNX Engine,
       Merged tab)
@@ -31,6 +31,8 @@ description: >-
     - Every block found includes these; a block without them is rejected
 
   Notes:
+    - A 1% development fee from each block found goes to ForgeNX. You can
+      add a donation of your own to any address in the app's Settings
     - eCash blocks come every 10 minutes on average
     - Real Time Targeting: a block found very soon after the last one must
       meet a harder target; the engine only sends blocks that do
@@ -49,9 +51,9 @@ description: >-
     - Stratum V1: 3336 (via ForgeNX Engine)
     - Stratum V2: 4336 (via ForgeNX Engine)
 developer: ForgeNX
-website: https://github.com/ForgeNX/forgexec
-repo: https://github.com/ForgeNX/forgexec
-support: https://github.com/ForgeNX/forgexec/issues
+website: https://www.forgenx.io
+repo: https://www.forgenx.io
+support: https://www.forgenx.io
 dependencies:
   - forgenx-engine
 port: 80
@@ -63,3 +65,4 @@ defaultPassword: ""
 submitter: ForgeNX
 node_symbol: XEC
 releaseDate: "2026-11-10"
+disk_gb: 15  # about how much disk it needs (pruned node: the newest ~10 GB of blocks plus the chainstate, about 2 GB); ForgeNX checks for it before installing

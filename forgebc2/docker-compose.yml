@@ -61,7 +61,7 @@ services:
       - BC2_RPC_USER=${BC2_RPC_USER:-forgebc2}
       - BC2_RPC_PORT=${BC2_RPC_PORT:-9006}
       - BC2_RPC_PASS=${BC2_RPC_PASS}
-      - BC2_PRUNE=${BC2_PRUNE:-10000}
+      - BC2_PRUNE=${BC2_PRUNE:-10240}
       - BC2_MORE_PEERS=${BC2_MORE_PEERS:-true}
       - BC2_NETWORK=${BC2_NETWORK:-mainnet}
       - BC2_AUTO_START=${BC2_AUTO_START:-true}
@@ -84,8 +84,7 @@ services:
       - ZMQ_PORT=28337
     ports:
       - "8341:8341"    # P2P
-      - "9006:9006"    # RPC (internal use only)
-      - "28337:28337"  # ZMQ
+      - "127.0.0.1:9006:9006"  # RPC: this machine only (the engine reaches the node over Docker's network)
     volumes:
       - ${APP_DATA_DIR}/data/node:/data/.bitcoinII
       # BitcoinII Core itself, downloaded from its official release on the

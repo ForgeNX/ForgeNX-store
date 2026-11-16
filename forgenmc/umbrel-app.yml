@@ -37,9 +37,9 @@ description: >-
     - RPC: 9009 (internal)
     - ZMQ: 28340 (internal)
 developer: ForgeNX
-website: https://github.com/ForgeNX/forgenmc
-repo: https://github.com/ForgeNX/forgenmc
-support: https://github.com/ForgeNX/forgenmc/issues
+website: https://www.forgenx.io
+repo: https://www.forgenx.io
+support: https://www.forgenx.io
 dependencies:
   - forgenx-engine
 port: 80

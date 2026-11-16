@@ -54,7 +54,7 @@ services:
       - DGB_RPC_USER=${DGB_RPC_USER:-forgedgb}
       - DGB_RPC_PORT=${DGB_RPC_PORT:-9001}
       - DGB_RPC_PASS=${DGB_RPC_PASS}
-      - DGB_PRUNE=${DGB_PRUNE:-0}
+      - DGB_PRUNE=${DGB_PRUNE:-10240}
       - DGB_MORE_PEERS=${DGB_MORE_PEERS:-true}
       - DGB_NETWORK=${DGB_NETWORK:-mainnet}
       - DGB_AUTO_START=${DGB_AUTO_START:-true}
@@ -77,8 +77,7 @@ services:
       - ZMQ_PORT=28332
     ports:
       - "12024:12024"
-      - "9001:9001"
-      - "28332:28332"
+      - "127.0.0.1:9001:9001"  # RPC: this machine only (the engine reaches the node over Docker's network)
     volumes:
       - ${APP_DATA_DIR}/data/node:/data/.digibyte
       - /var/lib/forgenx/shared/forgenx/coins:/pool/coins

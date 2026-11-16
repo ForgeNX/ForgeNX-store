@@ -12,7 +12,7 @@ description: >-
     - Peercoin Core v0.15.2 node with automatic sync
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
     - Real-time node stats in the ForgeNX dashboard
-    - ZMQ block/transaction publishing for the pool engine
+    - New-block notices (ZMQ) for the pool engine
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
 
   Miner connection (via ForgeNX Engine):
@@ -22,6 +22,8 @@ description: >-
     - Password: anything
 
   Notes:
+    - A 1% development fee from each block found goes to ForgeNX. You can
+      add a donation of your own to any address in the app's Settings
     - Payout addresses: P..., p... or pc1q...
     - A mined block's reward can be spent after 500 confirmations (about
       3.5 days), as on all of Peercoin's network
@@ -43,8 +45,8 @@ description: >-
     - Stratum V2: 4340 (via ForgeNX Engine)
 developer: ForgeNX
 website: https://www.forgenx.io
-repo: https://github.com/ForgeNX/forgenx
-support: https://github.com/ForgeNX/forgenx
+repo: https://www.forgenx.io
+support: https://www.forgenx.io
 dependencies:
   - forgenx-engine
 port: 80
@@ -56,3 +58,4 @@ defaultPassword: ""
 submitter: ForgeNX
 node_symbol: PPC
 releaseDate: "2026-11-10"
+disk_gb: 10  # about how much disk it needs (the whole chain, a few GB: Peercoin Core doesn't prune); ForgeNX checks for it before installing

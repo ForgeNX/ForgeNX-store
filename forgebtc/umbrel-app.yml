@@ -13,7 +13,7 @@ description: >-
     - Connects automatically to ForgeNX Engine via Stratum V1 & V2
     - Real-time node stats in the ForgeNX dashboard
     - Pruned by default (keeps the newest ~10 GB of blocks)
-    - ZMQ block/transaction publishing for the pool engine
+    - New-block notices (ZMQ) for the pool engine
     - Adjustable difficulty presets (Home, Small Farm, Large Farm)
     - Merge-mines Fractal Bitcoin and Namecoin through the ForgeNX Engine
       (Merged tab) when ForgeFB / ForgeNMC are installed
@@ -25,6 +25,8 @@ description: >-
     - Password: anything
 
   Notes:
+    - A 1% development fee from each block found goes to ForgeNX. You can
+      add a donation of your own to any address in the app's Settings
     - Payout addresses: bc1q..., bc1p... (taproot), 1... or 3...
     - Needs about 25 GB of disk when pruned (the chainstate, about 11 GB,
       can't be pruned); a full, unpruned node is over 750 GB
@@ -43,9 +45,9 @@ description: >-
     - Stratum V1: 3335 (via ForgeNX Engine)
     - Stratum V2: 4335 (via ForgeNX Engine)
 developer: ForgeNX
-website: https://github.com/ForgeNX/forgebtc
-repo: https://github.com/ForgeNX/forgebtc
-support: https://github.com/ForgeNX/forgebtc/issues
+website: https://www.forgenx.io
+repo: https://www.forgenx.io
+support: https://www.forgenx.io
 dependencies:
   - forgenx-engine
 port: 80
@@ -57,3 +59,4 @@ defaultPassword: ""
 submitter: ForgeNX
 node_symbol: BTC
 releaseDate: "2026-11-10"
+disk_gb: 25  # about how much disk it needs (pruned node: the newest ~10 GB of blocks plus the chainstate, about 11 GB); ForgeNX checks for it before installing

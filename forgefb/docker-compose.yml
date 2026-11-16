@@ -60,7 +60,7 @@ services:
       - FB_RPC_USER=${FB_RPC_USER:-forgefb}
       - FB_RPC_PORT=${FB_RPC_PORT:-9005}
       - FB_RPC_PASS=${FB_RPC_PASS}
-      - FB_PRUNE=${FB_PRUNE:-10000}
+      - FB_PRUNE=${FB_PRUNE:-10240}
       - FB_MORE_PEERS=${FB_MORE_PEERS:-true}
       - FB_NETWORK=${FB_NETWORK:-mainnet}
       - FB_AUTO_START=${FB_AUTO_START:-true}
@@ -83,8 +83,7 @@ services:
       - ZMQ_PORT=28336
     ports:
       - "8339:8339"    # P2P
-      - "9005:9005"    # RPC (internal use only)
-      - "28336:28336"  # ZMQ
+      - "127.0.0.1:9005:9005"  # RPC: this machine only (the engine reaches the node over Docker's network)
     volumes:
       - ${APP_DATA_DIR}/data/node:/data/.bitcoin
       - /var/lib/forgenx/shared/forgenx/coins:/pool/coins

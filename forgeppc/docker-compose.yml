@@ -83,8 +83,7 @@ services:
       - ZMQ_PORT=28339
     ports:
       - "8345:8345"    # P2P
-      - "9008:9008"    # RPC (internal use only)
-      - "28339:28339"  # ZMQ
+      - "127.0.0.1:9008:9008"  # RPC: this machine only (the engine reaches the node over Docker's network)
     volumes:
       - ${APP_DATA_DIR}/data/node:/data/.peercoin
       - /var/lib/forgenx/shared/forgenx/coins:/pool/coins
