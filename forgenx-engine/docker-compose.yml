@@ -77,6 +77,9 @@ services:
       - /var/lib/forgenx/shared/forgenx/coins:/pool/coins
       - /opt/forgenx/apps:/opt/forgenx/apps
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      # The engine key ForgeNX makes (forgenx-nginx-site.sh): the API's
+      # callers send it, so nothing else on the machine can use the API.
+      - /var/lib/forgenx/engine-api:/run/forgenx-engine-api:ro
 
     environment:
       - APP_DATA_DIR=${APP_DATA_DIR}
