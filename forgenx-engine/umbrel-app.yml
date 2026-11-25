@@ -2,8 +2,8 @@ manifestVersion: 1
 id: forgenx-engine
 category: bitcoin
 name: ForgeNX Engine
-version: "1.0.557"
-releaseDate: "2026-11-24"
+version: "1.0.558"
+releaseDate: "2026-11-25"
 tagline: Multi-coin Stratum mining engine
 
 description: >-
