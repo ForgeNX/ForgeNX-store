@@ -41,7 +41,7 @@ services:
       - /var/lib/forgenx/shared/forgenx/coins:/host-coins
 
   ui:
-    image: ghcr.io/forgenx/forgebtc-ui:0.1.17
+    image: ghcr.io/forgenx/forgebtc-ui:0.1.17@sha256:793ece31920f5205823975d78448415391995601e31ea9833c55eaae8130074f
     container_name: forgebtc-ui
     restart: unless-stopped
     networks:
@@ -49,7 +49,7 @@ services:
       - forgenx_network
 
   node:
-    image: ghcr.io/forgenx/forgebtc:0.1.9
+    image: ghcr.io/forgenx/forgebtc:0.1.9@sha256:16427aea496cb2487045ffaac4e822ea5578c5a35c992c0205a70ca6aecce7aa
     container_name: forgebtc-node
     stop_grace_period: 15m30s
     restart: unless-stopped

@@ -36,14 +36,14 @@ services:
       - ${APP_DATA_DIR}/data:/data
       - /var/lib/forgenx/shared/forgenx/coins:/host-coins
   ui:
-    image: ghcr.io/forgenx/forgedgb-ui:0.1.114
+    image: ghcr.io/forgenx/forgedgb-ui:0.1.114@sha256:f6cec358899be38449c4192f3c5ff6490409e5feb3ab2d5bff6bb08564f3bc0d
     container_name: forgedgb-ui
     restart: unless-stopped
     networks:
       - umbrel_main_network
       - forgenx_network
   node:
-    image: ghcr.io/forgenx/forgedgb:0.1.40
+    image: ghcr.io/forgenx/forgedgb:0.1.40@sha256:506da085e46c986b69811c9a0f2271de48f26b15b9f182605284355022602b1a
     container_name: forgedgb-node
     stop_grace_period: 15m30s
     restart: unless-stopped

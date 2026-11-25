@@ -1,0 +1,6 @@
+ForgeNX signed release v1
+key: 19fb30aec9ab8cee
+app: forgebch
+docker-compose.yml: sha256:472cf9a01a85e32d9daee3201179c50c6db133412ba0bed3990f8ebccdafc78f
+umbrel-app.yml: sha256:355ac2f75c03bf7ef64cc83ce60e01795ed0f1e3f1d3e2a7317719fb01a6f272
+signature: pdwEXFm8dBvFDIisBr+2tsB9FZwjvFNlfKK6ueSF+K0JcfwJmcyJB29tZ+8C6ry62i+aGEJ0qfO2NdEQWBTJAA==
