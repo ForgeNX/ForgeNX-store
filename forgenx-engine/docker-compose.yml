@@ -39,7 +39,7 @@ services:
     restart: "no"
 
   engine:
-    image: ghcr.io/forgenx/forgenx-engine:1.0.576@sha256:108a8d55d1a01e00f4bf5f15d24216dfa60fdd0e522dab57b9b00cded7b9968c
+    image: ghcr.io/forgenx/forgenx-engine:1.0.577@sha256:ce27577b9db275bcff523f9a6fe71887b94ad6532fd37f9c90f22df95299f327
     restart: unless-stopped
 
     depends_on:
