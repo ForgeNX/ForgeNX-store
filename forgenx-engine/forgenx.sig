@@ -1,6 +1,6 @@
 ForgeNX signed release v1
 key: 19fb30aec9ab8cee
 app: forgenx-engine
-docker-compose.yml: sha256:688764d7b8c0d955300207fd86a8345fc1fae9e8276e7a2e636466b651bd0e1a
-umbrel-app.yml: sha256:903136de0165c790d37cca659be967a282da7bd8f4c711129d6688545d2f42fd
-signature: HJm1qgSWYZqctnRelKn2vYjUXUSLG796FUCiC68UUN9+Q7bt8sIwCwvtHynDlOixozD422mBUhf3K3r24W5qAQ==
+docker-compose.yml: sha256:3695bd78452ea742c42eb7985511280a3b08af30b3a1751a7a7164668a12ac61
+umbrel-app.yml: sha256:5c4a1276bfca4f156b3d2ae712ff73db130cd3388606285060ad40100dae52e3
+signature: yJIfDhhn6r3TazsB/re03o9D4uP8wgFoOIZTq/G0YgrXYpRMBsyyF1uhxmCGXfAptjafHoBMZ3iEtA+turDFBA==
